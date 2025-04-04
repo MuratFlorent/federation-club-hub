@@ -1,0 +1,45 @@
+/* Style custom Espace Club */
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.brand-link {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.small-box .inner {
+    padding: 15px;
+}
+
+.small-box .small-box-footer {
+    background: rgba(0, 0, 0, 0.1);
+    color: #fff !important;
+    display: block;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.small-box .icon {
+    top: 10px;
+    right: 10px;
+    opacity: 0.4;
+}
+
+@media (max-width: 768px) {
+    .small-box .icon {
+        display: none;
+    }
+}
+
+#top #main .sidebar {
+    border-left-style: none !important;
+    border-left-width: 0px !important;
+}
+
+.info a{
+    color:#21b30f!important;
+}

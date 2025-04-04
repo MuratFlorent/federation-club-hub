@@ -1,0 +1,32 @@
+<div class="wrap amelia-type-wrap">
+    <h1>Gestion des Types d'Employés</h1>
+
+    <form method="post" class="amelia-type-form">
+        <table class="widefat fixed striped">
+            <thead>
+            <tr><th>Nom</th><th>Email</th><th>Type Employé</th></tr>
+            </thead>
+            <tbody>
+            <?php foreach ($employees as $user):
+                    $type = get_user_meta($user->ID, 'type_employe', true); ?>
+            <tr>
+                <td><?= esc_html($user->display_name) ?></td>
+                <td><?= esc_html($user->user_email) ?></td>
+                <td>
+                    <select name="type_employe[<?= esc_attr($user->ID) ?>]">
+                        <option value="">-- Choisir --</option>
+                        <?php foreach ($types_disponibles as $type_option): ?>
+                        <option value="<?= $type_option ?>" <?= selected($type, $type_option, false) ?>>
+                        <?= ucfirst($type_option) ?>
+                        </option>
+                        <?php endforeach; ?>
+                    </select>
+                </td>
+            </tr>
+            <?php endforeach; ?>
+            </tbody>
+        </table>
+
+        <p><input type="submit" name="type_employe_update" class="button button-primary" value="Enregistrer les modifications"></p>
+    </form>
+</div>
